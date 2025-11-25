@@ -59,6 +59,9 @@ curl -F "file=@yourfile.pdf" http://localhost:8080/api/pdf/summarize
 - `controller/` — REST API endpoints
 - `service/` — Business logic and Gemini API integration
 - `dto/` — Data Transfer Objects for request/response mapping
+- `target` - folder holds the old compiled files from the last time you ran the app. If you don't       delete them, sometimes old code gets mixed with new code, causing weird bugs.
+- `./mvnw clean install` -- Do- Everything command . It tries to install all dependencies from pom.xml and tries reu all tests in src/test and zip the package in .jar file and save it to my local library (install).
+- `install`: Creates the JAR AND copies it to your central ~/.m2 library. This makes your code reusable by other projects on your computer. It's the standard "success" check for a build.
 
 ---
 
