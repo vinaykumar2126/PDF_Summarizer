@@ -1,5 +1,6 @@
 package com.example.pdf_summarizer.controller; // Note: Package name should be lowercase 'controller'
-
+import com.example.pdf_summarizer.model.Summary;
+import com.example.pdf_summarizer.repository.SummaryRepository;
 import com.example.pdf_summarizer.service.GoogleGeminiService;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -15,6 +16,8 @@ public class PdfController {
 
     @Autowired
     private GoogleGeminiService googleGeminiService;
+    @Autowired
+    private SummaryRepository summaryRepository;
 
     @PostMapping("/summarize")
     public String summarizePdf(@RequestParam("file") MultipartFile file) {
@@ -32,7 +35,13 @@ public class PdfController {
             }
 
             // 3. Send to AI
-            return googleGeminiService.summarizeText(rawText);
+            String summary =  googleGeminiService.summarizeText(rawText);
+            Summary entity = new Summary();
+            entity.setFileName(file.getOriginalFilename());
+            entity.setSummaryText(summary);
+            summaryRepository.save(entity);
+
+            return summary;
 
         } catch (IOException e) {
             e.printStackTrace();
