@@ -60,7 +60,7 @@ curl -F "file=@yourfile.pdf" http://localhost:8080/api/pdf/summarize
 - `service/` — Business logic and Gemini API integration
 - `dto/` — Data Transfer Objects for request/response mapping
 - `target` - folder holds the old compiled files from the last time you ran the app. If you don't       delete them, sometimes old code gets mixed with new code, causing weird bugs.
-- `./mvnw clean install` -- Do- Everything command . It tries to install all dependencies from pom.xml and tries reu all tests in src/test and zip the package in .jar file and save it to my local library (install).
+- `./mvnw clean install` -- Do- Everything command . It tries to install all dependencies from pom.xml and tries run all tests in src/test and zip the package in .jar file and save it to my local library (install).
 - `install`: Creates the JAR AND copies it to your central ~/.m2 library. This makes your code reusable by other projects on your computer. It's the standard "success" check for a build.
 
 ---
@@ -87,5 +87,28 @@ curl -F "file=@yourfile.pdf" http://localhost:8080/api/pdf/summarize
 ---
 
 ## License
+
+1. Spring Data JPA
+Easily connect to databases and perform CRUD operations using repositories.
+2. Spring Security
+Add authentication and authorization to your application.
+3. Validation
+Use annotations (like @Valid, @NotNull) to validate incoming data in DTOs.
+4. Exception Handling
+Use @ControllerAdvice and @ExceptionHandler for global error handling.
+5. Configuration & Profiles
+Manage different environments (dev, prod) using application.properties and profiles.
+6. Spring Boot Actuator
+Monitor and manage your application with built-in endpoints (health, metrics, etc.).
+7. Testing
+Write unit and integration tests using Spring Boot’s testing support (@SpringBootTest, @WebMvcTest).
+8. Scheduling
+Run scheduled tasks using @Scheduled.
+9. Caching
+Improve performance with caching using @EnableCaching and @Cacheable.
+10. Async Processing
+Run tasks asynchronously using @Async.
+Tip:
+Pick one feature at a time, try a small example, and gradually integrate it into your projects!
 
 MIT
