@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class GoogleGeminiService {
 
-    @Value("${gemini.api.key}")
+    @Value("${gemini.api.key}")   // Inject API Key from application.properties to apiKey field.
     private String apiKey;
 
     // Using the latest stable model

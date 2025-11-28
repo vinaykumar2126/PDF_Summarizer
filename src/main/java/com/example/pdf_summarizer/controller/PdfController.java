@@ -48,4 +48,8 @@ public class PdfController {
             return "Error processing PDF: " + e.getMessage();
         }
     }
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello, World!";
+    }
 }

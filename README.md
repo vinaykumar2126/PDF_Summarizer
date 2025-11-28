@@ -84,6 +84,15 @@ curl -F "file=@yourfile.pdf" http://localhost:8080/api/pdf/summarize
 4. `RestTemplate` serializes this DTO into JSON and sends it to the Gemini API.
 5. The summarized result is received as JSON, which is automatically deserialized into a `GeminiResponse` DTO and returned as a response.
 
+
+
+## SecurityConfig.java:
+1. This is the “brain” of Spring Security controls the entire security behavior of your application.
+2. It tells Spring which URLs need JWT, which are public, what filters to run, and how to authenticate users.
+
+##
+- @RequestParam only receives form-data
+- @RequestBody can get JSON data
 ---
 
 ## License
